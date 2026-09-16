@@ -1,6 +1,6 @@
 # SRI
-**ESTE GIF NO REPRESENTA MI GUSTO POR LA ASIGNATURA**
-![Amby0](/Gifs/anby-demara-zenless-zone-zero.gif)
+
+![Amby0](/Gifs/sunna-scared.gif)
 ## Tema1
 | Actividades | Descripción |
 |------------:|---------------|
