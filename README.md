@@ -1,6 +1,6 @@
 # SRI
 
-![Amby0](/Gifs/sunna-scared.gif)
+![Amby0](/Gifs/bottled-stardust-vivian.gif)
 ## Tema1
 | Actividades | Descripción |
 |------------:|---------------|
