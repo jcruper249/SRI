@@ -7,8 +7,11 @@ telnet www.google.com 80
 ```
 ![Comando conexión](/img/comando-conexion-telnet.png)
 
-Esto nos conectara para podre hacer la petición, el comando tendremos que introducirlo sin ver lo que escribimos pero hay que escribir el siguiente comando:
+Esto nos conectara para podre hacer la petición, el comando tendremos que introducirlo sin ver lo que escribimos pero hay que escribir los siguientes comando:
 ```
+GET / HTTP/1.1
+HEAD / HTTP/1.1
+OPTIONS / HTTP/1.1
 GET / HTTP/1.1
 ```
 ![Introducir comando](/img/Introducir-comando.png)
