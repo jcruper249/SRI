@@ -4,5 +4,10 @@ cURL es una herramienta de línea de comandos y una biblioteca que sirve para tr
 Vamos a probar 5 comando de cURL, El primero permite obtener la pagina principal de la web o servidor al que apuntemos:
 **Comando**
 ```
-curl https://www.example.com/
+curl https://www.google.com/
+```
+El segundo nos permite obtener la pagina web atreves del puerto 8000
+**Comando**
+```
+curl http://www.example.com:8000/
 ```
