@@ -6,8 +6,27 @@ Vamos a probar 5 comando de cURL, El primero permite obtener la pagina principal
 ```
 curl https://www.google.com/
 ```
-El segundo nos permite obtener la pagina web atreves del puerto 8000
+![curl1](/img/Curl_1.png)
+
+El segundo comando conecta al servidor FTP público de RedIRIS y lista el contenido del directorio raíz directamente en la pantalla
+
+```
+curl ftp://ftp.rediris.es
+```
+![curl2](/img/curl_2.png)
+El tercero nos permite obtener la pagina web atreves del puerto 8000, Este se queda pillado pensando hasta que rechace la conexión
 **Comando**
 ```
 curl http://www.example.com:8000/
 ```
+![curl3](/img/curl_3.png)
+El cuarto comando sirve obtener una página web y guárdarla en un archivo local, hay que hacer un archivo local para guarda el archivo remoto (si no se especifica ninguna parte del nombre del archivo en la URL, esto falla)
+```
+curl -O https://www.example.com/index.html
+```
+![curl4](/img/curl_4.png)
+El quinto comando sigue redirecciones automáticamente
+```
+curl -L https://dominio.com
+```
+![curl5](/img/curl_5.png)
