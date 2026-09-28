@@ -25,6 +25,7 @@ El cuarto comando sirve obtener una página web y guárdarla en un archivo local
 curl -O https://www.example.com/index.html
 ```
 ![curl4](/img/curl_4.png)
+
 El quinto comando sigue redirecciones automáticamente
 ```
 curl -L https://dominio.com
