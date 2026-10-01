@@ -46,3 +46,17 @@ Esto es lo que debería salir al ejecutar el comando
 ![salida-del-com](/img/Tema1/ejecucion-mysql.png)
 
 Para salir de la consola MySQL ponemos el comando ``exit`` y nos sacaria.
+
+# Instalar PHP
+Para instalar PHP tenemos que entrar en la terminal y poner el comando:
+```
+$ sudo apt install php libapache2-mod-php php-mysq
+```
+Esto nos instalara el PHP de apache y MySQL
+
+![Instalar-PHP](/img/Tema1/instalarPHP.png)
+
+Una vez terminado ejecutaremos el comando ``php -v`` para ver la versión de php que tenemos
+
+![Versión-PHP](/img/Tema1/phpversion.png)
+
