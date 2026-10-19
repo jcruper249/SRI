@@ -48,15 +48,60 @@ Si tienes problemas con Apache consulta el siguiente enlace:
   ![APACHECONF5](/img/Tema1/Act2/Confapache5.png)
   
 ## Comprueba si se visualiza el pie de página en las páginas generadas por Apache (por ejemplo, en las páginas de error). Cambia el valor de la directiva “ServerSignature” y comprueba que funciona correctamente.
+   Para comprobarlo entramos en http://localhost y ponemos una URL equivocada
+   Después hacemos un grep -r "ServerSignature" /etc/apache2 esto nos mostrara las coincidencias de las palabras "ServerSignature" en todos los ficheros de apache2
+  ![APACHECONF6](/img/Tema1/Act2/Confapache6.png)
+
+  Una vez comprobado eso vamos a editar el fichero apache2.conf y poner la directiva "ServerSignature OFF"
+  ![APACHECONF7](/img/Tema1/Act2/Confapache7.png)
+  
+  Al poner la directiva si entramos en http://localhost y ponemos una URL equivocada no nos saldra el pie de pagina que generaba automaticamente
+  ![APACHECONF8](/img/Tema1/Act2/Confapache8.png)
+
 
 ## Crea un directorio “prueba” y otro directorio “prueba2”. Incluye un par de páginas en cada una de ellas.
+   Para crear un directorio hay que utilizar el comando mkdir por lo tanto vamos a poner los siguientes comandos:
+   Antes de poner estos comandos exactos tendríamos que estar en el directorio /var/www/html si no hay que poner la ruta completa
+   ```
+   $ sudo mkdir prueba
+   $ sudo mkdir prueba2
+   ```
+  ![APACHECONF9](/img/Tema1/Act2/Confapache9.png)
+
+  
+
 ## Redirecciona el contenido de la carpeta “prueba” hacia “prueba2”
    Paso1: Poner sudo nano etc/apache2/apache2.conf
    Paso2: Añadimos al final
       ``Redirect /prueba /prueba2``
    Paso3 reiniciamos apache con `` $sudo systemctl restart apache2``
+   
 ## Es posible redireccionar tan solo una página en lugar de toda la carpeta. Pruébalo.
+   Paso1: Poner ``sudo nano etc/apache2/apache2.conf``
+   
+   Paso2: Redirect agregamos ``Redirect /prueba/"pagina a elegir" /prueba2/"pagina a elegir"``
 ## Usa la directiva userdir
+Paso 1: Para hacer esto primero activamos el userdir escribiendo "sudo a2enmod userdir":
+Ahora reiniciamos el servicio de apache2:
+![APACHECONF8.1](/img/Tema1/Act2/Confapache8.1.png)
+
+Paso 2: Ahora creamos el directorio con: ``mkdir /home/usuario/public_html``
+![APACHECONF8.2](/img/Tema1/Act2/Confapache8.2.png)
+El usuario que pongas debe de ser el tuyo propio
+
+Paso 3: Y ahora nos hacemos un index.html en el directorio que acabamos de crear con un nano ``/home/usuario/public_html/index.html:``
+![APACHECONF8.3](/img/Tema1/Act2/Confapache8.3.png)
+
+Paso 4: Ahora para ver si está bien hacemos un sudo apachectl configtest
+![APACHECONF8.4](/img/Tema1/Act2/Confapache8.4.png)
+
+Paso 5: Procedemos a reinicar el servicio con un service apache2 restart
+
+Paso 6: Ahora tenemos que darle permisos para poder meternos con el comando de chmod 755 /home/usuario
+![APACHECONF8.5](/img/Tema1/Act2/Confapache8.5.png)
+
+
+
 ## Usa la directiva alias para redireccionar a una carpeta dentro del directorio de usuario.
 ## ¿Para qué sirve la directiva Options y dónde aparece. Comprueba si apache indexa los directorios. Si es así, ¿cómo lo desactivamos?
     
