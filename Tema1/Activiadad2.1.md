@@ -16,7 +16,7 @@ Si tienes problemas con Apache consulta el siguiente enlace:
    ```
    
    Una vez dentro ponemos ``Listen 81`` dentro del fichero guardamos y salimos
-   ![APACHECONF1](/img/Tema1/Act2/Confapache1.png)
+![APACHECONF1](/img/Tema1/Act2/Confapache1.png)
    
    Para que los cambios surtan efecto ponemos el comando `` $sudo systemctl restart apache2``
    
@@ -29,10 +29,10 @@ Si tienes problemas con Apache consulta el siguiente enlace:
   ```
 
   Una vez dentro escribimos lo siguiente: ``127.0.0.1 marisma.intranet`` una vez escrito guardamos y probamos a entrar en el navegador
-  ![APACHECONF2](/img/Tema1/Act2/Confapache2.png)
+![APACHECONF2](/img/Tema1/Act2/Confapache2.png)
 
   Para acceder en el navegador hay que poner **http://marisma.intranet**
-  ![APACHECONF3](/img/Tema1/Act2/Confapache3.png)
+![APACHECONF3](/img/Tema1/Act2/Confapache3.png)
 
 ## Cambia la directiva “ServerTokens” para mostrar el nombre del producto.
   Para cambiar la directiva "ServerTokens" tenemos que entrar en el archivo de configuración ``apache2.conf`` para ello nos tenemos que colocar en **/etc/apache2** y a partir de ahí editar como root el archivo para ello ponemos el siguiente comando:
@@ -42,21 +42,21 @@ Si tienes problemas con Apache consulta el siguiente enlace:
   ```
   
   Una vez dentro del archivo tendremos que poner la siguiente lineal ``ProductOnly`` esto hará que solo salga la información esencial una vez puesta reiniciamos apache y ya estaría aplicada la configuración
-  ![APACHECONF4](/img/Tema1/Act2/Confapache4.png)
+![APACHECONF4](/img/Tema1/Act2/Confapache4.png)
 
   Aqui se muestra la prueba de que funciona
-  ![APACHECONF5](/img/Tema1/Act2/Confapache5.png)
+![APACHECONF5](/img/Tema1/Act2/Confapache5.png)
   
 ## Comprueba si se visualiza el pie de página en las páginas generadas por Apache (por ejemplo, en las páginas de error). Cambia el valor de la directiva “ServerSignature” y comprueba que funciona correctamente.
    Para comprobarlo entramos en http://localhost y ponemos una URL equivocada
    Después hacemos un grep -r "ServerSignature" /etc/apache2 esto nos mostrara las coincidencias de las palabras "ServerSignature" en todos los ficheros de apache2
-  ![APACHECONF6](/img/Tema1/Act2/Confapache6.png)
+![APACHECONF6](/img/Tema1/Act2/Confapache6.png)
 
   Una vez comprobado eso vamos a editar el fichero apache2.conf y poner la directiva "ServerSignature OFF"
-  ![APACHECONF7](/img/Tema1/Act2/Confapache7.png)
+![APACHECONF7](/img/Tema1/Act2/Confapache7.png)
   
   Al poner la directiva si entramos en http://localhost y ponemos una URL equivocada no nos saldra el pie de pagina que generaba automaticamente
-  ![APACHECONF8](/img/Tema1/Act2/Confapache8.png)
+![APACHECONF8](/img/Tema1/Act2/Confapache8.png)
 
 
 ## Crea un directorio “prueba” y otro directorio “prueba2”. Incluye un par de páginas en cada una de ellas.
@@ -66,13 +66,13 @@ Si tienes problemas con Apache consulta el siguiente enlace:
    $ sudo mkdir prueba
    $ sudo mkdir prueba2
    ```
-  ![APACHECONF9](/img/Tema1/Act2/Confapache9.png)
+![APACHECONF9](/img/Tema1/Act2/Confapache9.png)
 
 Despues utilizaremos el comando nano para crear archivos index.html para cada carpeta unos 2 por carpeta
-  ![APACHECONF10](/img/Tema1/Act2/Confapache10.png)
+![APACHECONF10](/img/Tema1/Act2/Confapache10.png)
 
 Ahora comprobamos que todo este creado:
-  ![APACHECONF11](/img/Tema1/Act2/Confapache11.png)
+![APACHECONF11](/img/Tema1/Act2/Confapache11.png)
 
 
 ## Redirecciona el contenido de la carpeta “prueba” hacia “prueba2”
