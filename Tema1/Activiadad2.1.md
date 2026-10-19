@@ -68,7 +68,12 @@ Si tienes problemas con Apache consulta el siguiente enlace:
    ```
   ![APACHECONF9](/img/Tema1/Act2/Confapache9.png)
 
-  
+Despues utilizaremos el comando nano para crear archivos index.html para cada carpeta unos 2 por carpeta
+  ![APACHECONF10](/img/Tema1/Act2/Confapache10.png)
+
+Ahora comprobamos que todo este creado:
+  ![APACHECONF11](/img/Tema1/Act2/Confapache11.png)
+
 
 ## Redirecciona el contenido de la carpeta “prueba” hacia “prueba2”
    Paso1: Poner sudo nano etc/apache2/apache2.conf
