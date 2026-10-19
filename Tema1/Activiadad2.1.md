@@ -49,12 +49,16 @@ Si tienes problemas con Apache consulta el siguiente enlace:
   
 ## Comprueba si se visualiza el pie de página en las páginas generadas por Apache (por ejemplo, en las páginas de error). Cambia el valor de la directiva “ServerSignature” y comprueba que funciona correctamente.
 
-Crea un directorio “prueba” y otro directorio “prueba2”. Incluye un par de páginas en cada una de ellas.
-Redirecciona el contenido de la carpeta “prueba” hacia “prueba2”
-Es posible redireccionar tan solo una página en lugar de toda la carpeta. Pruébalo.
-Usa la directiva userdir
-Usa la directiva alias para redireccionar a una carpeta dentro del directorio de usuario.
-¿Para qué sirve la directiva Options y dónde aparece. Comprueba si apache indexa los directorios. Si es así, ¿cómo lo desactivamos?
+## Crea un directorio “prueba” y otro directorio “prueba2”. Incluye un par de páginas en cada una de ellas.
+## Redirecciona el contenido de la carpeta “prueba” hacia “prueba2”
+   Paso1: Poner sudo nano etc/apache2/apache2.conf
+   Paso2: Añadimos al final
+      ``Redirect /prueba /prueba2``
+   Paso3 reiniciamos apache con `` $sudo systemctl restart apache2``
+## Es posible redireccionar tan solo una página en lugar de toda la carpeta. Pruébalo.
+## Usa la directiva userdir
+## Usa la directiva alias para redireccionar a una carpeta dentro del directorio de usuario.
+## ¿Para qué sirve la directiva Options y dónde aparece. Comprueba si apache indexa los directorios. Si es así, ¿cómo lo desactivamos?
     
 Nota: Para ver la respuesta http podemos usar cURL
 [Enlace4](https://curl.haxx.se/docs/httpscripting.html)
