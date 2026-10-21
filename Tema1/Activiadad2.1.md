@@ -167,7 +167,8 @@ Comprobación de la indexación
    ![APACHECONF22](/img/Tema1/Act2/Confapache22.png)
    
 Para desactivarlo habría que editar esas mismas lineas y poner en vez de ``Options Indexes Followsymlinks`` habria que poner ``Options -Indexes +Followsymlinks``
-   ![APACHECONF21](/img/Tema1/Act2/Confapache21.png)
+
+![APACHECONF21](/img/Tema1/Act2/Confapache21.png)
 
 
 Y después reiniciamos apache con `` sudo systemctl restart apache2 ``
