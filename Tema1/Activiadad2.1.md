@@ -142,11 +142,32 @@ Paso 6: Ahora tenemos que darle permisos para poder meternos con el comando de c
 
 
 ## Usa la directiva alias para redireccionar a una carpeta dentro del directorio de usuario.
+Primero hay que poner ``sudo nano /etc/apache2/apache2.conf``
+   ![APACHECONF15](/img/Tema1/Act2/Confapache15.png)
 
+Después hay que poner la siguiente linea en el fichero:
+```
+Alias /Alias_a_elegir /prueba/index.html
+```
+Este es un ejemplo de lo que puedes poner
+   ![APACHECONF18](/img/Tema1/Act2/Confapache18.png)
+   
+Por ultimo tendriamos que reiniciar apache para que se aplique la nueva configuración
+
+Prueba:
+   ![APACHECONF19](/img/Tema1/Act2/Confapache19.png)
 
 ## ¿Para qué sirve la directiva Options y dónde aparece. Comprueba si apache indexa los directorios. Si es así, ¿cómo lo desactivamos?
+La directiva options se utiliza para controlar qué características y funcionalidades del servidor están disponibles en un directorio específico, aparece sobre todo en los archivos de configuración como apache2.conf
 
-Si apache indexa el directorio /var/www
+Si apache indexa el directorio /var/www eso es por que en el archivo apache2.conf existen estas lineas:
+   ![APACHECONF20](/img/Tema1/Act2/Confapache20.png)
+
+Para desactivarlo habría que editar esas mismas lineas y poner en vez de ``Options Indexes Followsymlinks`` habria que poner ``Options -Indexes Followsymlinks``
+   ![APACHECONF21](/img/Tema1/Act2/Confapache21.png)
+
+
+Y después reiniciamos apache con `` sudo sys ``
     
 Nota: Para ver la respuesta http podemos usar cURL
 [Enlace4](https://curl.haxx.se/docs/httpscripting.html)
