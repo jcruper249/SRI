@@ -163,6 +163,9 @@ La directiva options se utiliza para controlar qué características y funcional
 Si apache indexa el directorio /var/www eso es por que en el archivo apache2.conf existen estas lineas:
    ![APACHECONF20](/img/Tema1/Act2/Confapache20.png)
 
+Comprobación de la indexación
+   ![APACHECONF22](/img/Tema1/Act2/Confapache22.png)
+   
 Para desactivarlo habría que editar esas mismas lineas y poner en vez de ``Options Indexes Followsymlinks`` habria que poner ``Options -Indexes Followsymlinks``
    ![APACHECONF21](/img/Tema1/Act2/Confapache21.png)
 
