@@ -166,11 +166,15 @@ Si apache indexa el directorio /var/www eso es por que en el archivo apache2.con
 Comprobación de la indexación
    ![APACHECONF22](/img/Tema1/Act2/Confapache22.png)
    
-Para desactivarlo habría que editar esas mismas lineas y poner en vez de ``Options Indexes Followsymlinks`` habria que poner ``Options -Indexes Followsymlinks``
+Para desactivarlo habría que editar esas mismas lineas y poner en vez de ``Options Indexes Followsymlinks`` habria que poner ``Options -Indexes +Followsymlinks``
    ![APACHECONF21](/img/Tema1/Act2/Confapache21.png)
 
 
-Y después reiniciamos apache con `` sudo sys ``
+Y después reiniciamos apache con `` sudo systemctl restart apache2 ``
+
+Comprobación de que funciona ya que no me indexa nada:
+   ![APACHECONF23](/img/Tema1/Act2/Confapache23.png)
+
     
 Nota: Para ver la respuesta http podemos usar cURL
 [Enlace4](https://curl.haxx.se/docs/httpscripting.html)
