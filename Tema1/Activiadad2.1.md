@@ -90,7 +90,13 @@ Ahora comprobamos que todo este creado:
    Paso1: Poner sudo nano etc/apache2/apache2.conf
    Paso2: Añadimos al final
       ``Redirect /prueba /prueba2``
+
+   ![APACHECONF12](/img/Tema1/Act2/Confapache12.png)
+
    Paso3 reiniciamos apache con `` $sudo systemctl restart apache2``
+
+   ![APACHECONF13](/img/Tema1/Act2/Confapache13.png)
+
    
 ## Es posible redireccionar tan solo una página en lugar de toda la carpeta. Pruébalo.
    Paso1: Poner ``sudo nano etc/apache2/apache2.conf``
@@ -125,6 +131,8 @@ Paso 6: Ahora tenemos que darle permisos para poder meternos con el comando de c
 
 
 ## Usa la directiva alias para redireccionar a una carpeta dentro del directorio de usuario.
+
+
 ## ¿Para qué sirve la directiva Options y dónde aparece. Comprueba si apache indexa los directorios. Si es así, ¿cómo lo desactivamos?
     
 Nota: Para ver la respuesta http podemos usar cURL
