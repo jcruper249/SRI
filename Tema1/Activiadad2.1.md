@@ -97,11 +97,22 @@ Ahora comprobamos que todo este creado:
 
    ![APACHECONF13](/img/Tema1/Act2/Confapache13.png)
 
+   Prueba de que se ha echo:
+   ![APACHECONF14](/img/Tema1/Act2/Confapache14.png)
+
    
 ## Es posible redireccionar tan solo una página en lugar de toda la carpeta. Pruébalo.
    Paso1: Poner ``sudo nano etc/apache2/apache2.conf``
    
+   ![APACHECONF15](/img/Tema1/Act2/Confapache15.png)
+
    Paso2: Redirect agregamos ``Redirect /prueba/"pagina a elegir" /prueba2/"pagina a elegir"``
+   ![APACHECONF16](/img/Tema1/Act2/Confapache16.png)
+
+Prueba:
+   ![APACHECONF17](/img/Tema1/Act2/Confapache17.png)
+
+   
 ## Usa la directiva userdir
 Paso 1: Para hacer esto primero activamos el userdir escribiendo "sudo a2enmod userdir":
 Ahora reiniciamos el servicio de apache2:
@@ -134,6 +145,8 @@ Paso 6: Ahora tenemos que darle permisos para poder meternos con el comando de c
 
 
 ## ¿Para qué sirve la directiva Options y dónde aparece. Comprueba si apache indexa los directorios. Si es así, ¿cómo lo desactivamos?
+
+Si apache indexa el directorio /var/www
     
 Nota: Para ver la respuesta http podemos usar cURL
 [Enlace4](https://curl.haxx.se/docs/httpscripting.html)
