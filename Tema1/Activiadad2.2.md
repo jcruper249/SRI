@@ -18,7 +18,7 @@ else
     else
         echo "No existe ese puerto en ports.conf"
         cp ports.conf ports.bak
-        echo "Listen $1" >> ports.bak
+        echo "Listen $1" >> ports.conf
         echo "Puerto añadido"
         service apache2 restart
         echo "Apache reiniciado"
@@ -27,3 +27,8 @@ else
 
 fi
 ```
+Al ejecutar esto nos añadirá el puerto a ports.conf
+
+![Ports1](/img/Tema1/ACT2.2/ports1.png)
+
+
