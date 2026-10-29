@@ -31,4 +31,8 @@ Al ejecutar esto nos añadirá el puerto a ports.conf
 
 ![Ports1](/img/Tema1/ACT2.2/ports1.png)
 
+Para comprobar que funciona nos metemos al navegador y entramos en la url ``localhost:82`` al poner esto deberíamos poder acceder al servidor de apache por el puerto 82
+![Ports2](/img/Tema1/ACT2.2/ports2.png)
+
+
 
