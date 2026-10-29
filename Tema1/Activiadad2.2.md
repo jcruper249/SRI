@@ -59,9 +59,11 @@ fi
 Con este script podremos añadir un host al fichero hosts
 
 Ejecución:
+
 ![script1](/img/Tema1/ACT2.2/script1.png)
 
 Vista una vez ya añadido:
+
 ![script2](/img/Tema1/ACT2.2/script2.png)
 
 Para el tercer script necesitaremos hacer el siguiente script:
@@ -90,12 +92,15 @@ fi
 Con este script podremos crear una pagina web aunque bastante basica y limitada la estoy creando para el dominio your_domain que creamos anteriormente.
 
 Ejecución:
+
 ![script3](/img/Tema1/ACT2.2/script3.png)
 
 Vista una vez ya añadido:
+
 ![script4](/img/Tema1/ACT2.2/script4.png)
 
 Vista del codigo:
+
 ![script5](/img/Tema1/ACT2.2/script5.png)
 
 
