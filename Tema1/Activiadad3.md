@@ -5,7 +5,10 @@
   sudo mkdir /var/www/html/dir1
   sudo mkdir /var/www/html/dir2
   ```
-3. Explica qué diferencia existe entre ambos y muestra su equivalencia con la directiva Require:
+
+![dir1](/)
+
+2. Explica qué diferencia existe entre ambos y muestra su equivalencia con la directiva Require:
 <Directory /var/www/example1>
 Order Deny,Allow
 Deny from All
