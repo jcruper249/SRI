@@ -67,6 +67,21 @@ Allow from 192.168.1.100
 
 4. Modifica la configuración de forma que el acceso a dir1:
   a) Se permita a "marisma.intranet" y no se permita desde 10.3.0.101"
+	Entramos al fichero apache2.conf para editar la configuración y cambiamos la linea anteriormente hecha por las siguientes lineas.
+	```console
+ 	<Directory "/var/www/html/dir1">
+ 		Require host marisma.intranet
+ 		Require not ip 10.3.0.101/16
+ 	</Directory>
+ 	```
+ ![dir6](/img/Tema1/Act3/dir6.png)
 	
-5. Modifica la configuración de forma que el acceso a dir2:
+6. Modifica la configuración de forma que el acceso a dir2:
   a) Se permita a "10.3.0.100/8" y no a "marisma.intranet"
+	```console
+ 	<Directory "/var/www/html/dir1">
+ 		Require not host marisma.intranet
+ 		Require ip 10.3.0.100/8
+ 	</Directory>
+ 	```
+ ![dir7](/img/Tema1/Act3/dir7.png)
