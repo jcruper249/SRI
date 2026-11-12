@@ -1,7 +1,7 @@
 # Activiadad4
 Escribe las expresiones regulares para los siguientes supuestos:
 **Directorios en /www/ cuyo nombre consista en tres dígitos.**
-!(Actividad4)[/img/Tema1/Act4/expre1.png]
+![Actividad4](/img/Tema1/Act4/expre1.png)
 
 **Ficheros: *.gif, *.jpeg, *.jpg, *.png**
 
