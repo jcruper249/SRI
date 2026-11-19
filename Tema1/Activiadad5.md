@@ -9,10 +9,12 @@ Lo siguiente seria entrar en el fichero de configuración y escribir las siguien
   RewriteRule ^operacion.html$ operacion.php
 </Directory>
 ```
+
 ![Redir1](/img/Tema1/Act5/redir1.png)
 
 Por ultimo reiniciamos el servicio de apache para aplicar los cambios y ya estaría todo de parte de la configuración
 Y ahora para probarlo tenemos que poner la siguiente URL en el navegador **http://localhost/operacion.html?op=suma&op1=6&op2=8**
+
 ![Redir2](/img/Tema1/Act5/redir2.png)
  
 
@@ -33,8 +35,30 @@ Esto puede ser penalizado por los motores de búsqueda ya que podemos acceder a 
   RewriteRule ^(.+)\.do$ /$1.html [r, nc]
 </Directory>
 ```
+
 ![Redir3](/img/Tema1/Act5/redir3.png)
 
+Por ultimo reiniciamos el servicio de apache para aplicar los cambios y ya estaría todo de parte de la configuración
 Ahora si escribimos en el navegador **http://localhost/operacion.do** nos redirigirá a **http://localhost/operacion.html**
 
 ## Ejemplo 3: Crear URL amigables
+Para crear URL amigables tenemos que añadir las siguientes líneas en el fichero de configuración y escribir las siguientes líneas:
+```bash
+<Directory /var/www/html>
+  Options FollowSymLinks
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^([a-z]+)/([0-9]+)/([0-9]+)$ /operacion.php?op=$1&op1=$2&op2=$3
+</Directory>
+```
+
+![Redir4](/img/Tema1/Act5/redir4.png)
+
+Ahora al reiniciar apache y poner **http://localhost/suma/9/8**
+
+![Redir5](/img/Tema1/Act5/redir5.png)
+
+## Ejemplo 4: Acortar URL
+
+
+
