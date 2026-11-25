@@ -125,3 +125,74 @@ Se tendria que ver asi:
 
 ![VH10](/img/Tema1/Act6/VH10.png)
 
+### Copia el primer Archivo Virtual Host y cambialo para el Segundo Dominio
+
+Ahora vamos a hacer lo mismo con el segundo Virtual Host
+Primero copiamos el archivo:
+```bash
+sudo cp /etc/apache2/sites-available/ejemplo.com.conf /etc/apache2/sites-available/pruebas.com.conf
+```
+Abrimos el archivo para editarlo
+```bash
+sudo nano /etc/apache2/sites-available/pruebas.com.conf
+```
+Y lo cambiamos para que quede tal que asi:
+```bash
+<VirtualHost *:80>
+    ServerAdmin admin@pruebas.com
+    ServerName pruebas.com
+    ServerAlias www.pruebas.com
+    DocumentRoot /var/www/pruebas.com/public_html
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+```
+
+![VH11](/img/Tema1/Act6/VH11.png)
+
+## Paso Cinco — Habilita los nuevos Archivos Virtual Host
+Para habilitar los Virtual Host debemos utilizar la herramienta ```a2enside```, esto es lo que habría que poner en la terminal:
+```bash
+sudo a2ensite ejemplo.com.conf
+sudo a2ensite pruebas.com.conf
+```
+
+![VH12](/img/Tema1/Act6/VH12.png)
+
+Ahora reiniciamos apache:
+```bash
+sudo service apache2 restart
+```
+
+## Paso Seis — Configura Archivos Locales 
+Vamos a hacer que el dominio apunte a localhost para que podamos acceder para ello vamos a entrar en ```/etc/hosts``` para ello escribiremos lo siguiente en la linea de comando:
+```bash
+sudo nano /etc/hosts
+```
+
+![VH13](/img/Tema1/Act6/VH13.png)
+
+Y editaremos el archivo para que quede tal que asi:
+```bash
+127.0.0.1   localhost
+127.0.1.1   guest-desktop
+127.0.0.1 ejemplo.com
+127.0.0.1 pruebas.com
+```
+
+![VH14](/img/Tema1/Act6/VH14.png)
+
+## Paso Sierte — Prueba tus Tesultados
+Ahora para probar los virtual host tenemos que poner lo siguiente en el buscado para acceder a cada virtual host:
+```
+http://ejemplo.com
+```
+Esto demuestra que se puede acceder a ejemplo.com
+
+![VH15](/img/Tema1/Act6/VH15.png)
+
+```
+http://pruebas.com
+```
+
+![VH16](/img/Tema1/Act6/VH16.png)
