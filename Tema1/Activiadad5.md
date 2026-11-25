@@ -79,4 +79,37 @@ Esto hará que busquemos en la web la palabra que pongamos, el enlace se tiene q
 
 ![Redir8](/img/Tema1/Act5/redir8.png)
 
+Ejemplo 5: Uso del RewriteCond
+Ls directiva RewriteCond nos permite especificar una condición que si se cumple se ejecuta la directiva RewriteRule posterior. Se pueden poner varias condiciones con RewriteCond, en este caso cuando se cumplen todas se ejecuta la directiva RewriteRule posterior.
 
+Como vemos en la documentación podemos preguntar por varios parámetros , entre los que destacamos los siguientes:
+
+**%{HTTP\_USER\_AGENT}**: Información del cliente que accede.
+Ejemplo:
+```bash
+RewriteCond %{HTTP\_USER\_AGENT} ^Mozilla
+RewriteRule ^/$ /index.max.html [L]
+RewriteCond %{HTTP\_USER\_AGENT} ^Lynx
+RewriteRule ^/$ /index.min.html [L]
+RewriteRule ^/$ /index.html [L]
+```
+**%{QUERY_STRING}**: Guarda la cadena de parámetros de una URL dinámica.Por ejemplo:
+```bash
+RewriteCond %{QUERY_STRING} lang=(.*)
+RewriteRule ^index\.php$ /%1/$1
+```
+**%{REMOTE_ADDR}**: Dirección de destino. Por ejemplo puedo denegar el acceso a una dirección:
+```bash
+  RewriteCond %{REMOTE_ADDR} 145.164.1.8
+  RewriteRule ^(.*)$ / [R,NC,L]
+```
+
+También podemos controlar la reescritura de URL según la hora y la fecha, para saber más lee este artículo.
+
+**%{HTTP_REFERER}**: Guarda la URL que accede a nuestra página y %{REQUEST_URI} guarda la URI, URL sin nombre de dominio. Podemos evitar el Hot_Linking, o uso de recursos de tu servidor desde otra web. 
+```bash
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http://(www\.)?dominio\.com/ [NC]
+RewriteCond %{REQUEST_URI} !hotlink\.(gif|png) [NC]
+RewriteRule .*\.(gif|jpg|png)$ http://www.dominio.com/image/hotlink.png [NC]
+```
