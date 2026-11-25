@@ -59,6 +59,24 @@ Ahora al reiniciar apache y poner **http://localhost/suma/9/8**
 ![Redir5](/img/Tema1/Act5/redir5.png)
 
 ## Ejemplo 4: Acortar URL
+Para acortar una URL hay que poner lo siguiente en el archivo de configuración de apache.
+```bash
+<Directory /var/www/html>
+  Options FollowSymLinks
+  RewriteEngine On
+  RewriteRule ^(.+)\.do$ /$1.html [r,nc]
+  RewriteBase /
+  RewriteRule ^([a-z]+)/([0-9]+)/([0-9]+)$ /operacion.php?op=$1&op1=$2&op2=$3
+  RewriteRule buscar/(.+) https://google.com/search?q=$1
+</Directory>
+```
 
+![Redir6](/img/Tema1/Act5/redir6.png)
+
+Esto hará que busquemos en la web la palabra que pongamos, el enlace se tiene que ver asi
+
+![Redir7](/img/Tema1/Act5/redir7.png)
+
+![Redir8](/img/Tema1/Act5/redir8.png)
 
 
